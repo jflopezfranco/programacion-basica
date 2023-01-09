@@ -4,7 +4,18 @@ function iniciar_juego(){
 }
 
 function selector_mascota_jugador(){
-    alert("seleccionaste tu mascota")
+let input_hipodogue = document.getElementById("hipodogue")
+let input_capipepo = document.getElementById("capipepo")
+let input_ratigueya = document.getElementById("ratigueya")
+    if (input_hipodogue.checked){
+        alert("Seleccionaste a Hipodogue")
+    }   else if (input_capipepo.checked){
+        alert("Seleccionaste a Capipepo")
+    }   else if(input_ratigueya.checked){
+        alert("Seleccionaste a Ratigueya")
+    } else {
+        alert("input incorreto. Selecciona una mascota para iniciar")
+    }
 }
 
 window.addEventListener("load", iniciar_juego)
