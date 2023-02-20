@@ -1,6 +1,15 @@
+let ataqueJugador 
+
 function iniciar_juego(){
     let boton_mascota_jugador = document.getElementById("selector-mascota")
     boton_mascota_jugador.addEventListener("click", selector_mascota_jugador)  
+
+    let botonFuego = document.getElementById("selector-fuego")
+    botonFuego.addEventListener("click", ataqueFuego)
+    let botonAgua = document.getElementById("selector-agua")
+    botonAgua.addEventListener("click", ataqueAgua)
+    let botonTierra = document.getElementById("selector-tierra")
+    botonTierra.addEventListener("click", ataqueTierra)
 }
 
 function selector_mascota_jugador(){
@@ -32,6 +41,21 @@ function seleccionar_mascota_enemigo (){
     }   else {
         span_mascota_enemigo.innerHTML = "Ratigueya"
     }
+}
+
+function ataqueFuego(){
+    ataqueJugador = "FUEGO"
+    alert(ataqueJugador)
+}
+
+function ataqueAgua(){
+    ataqueJugador = "AGUA"
+    alert(ataqueJugador)
+}
+
+function ataqueTierra(){
+    ataqueJugador = "TIERRA"
+    alert(ataqueJugador)
 }
 
 function aleatorio (min,max){
