@@ -1,4 +1,5 @@
 let ataqueJugador 
+let ataqueEnemigo
 
 function iniciar_juego(){
     let boton_mascota_jugador = document.getElementById("selector-mascota")
@@ -31,12 +32,12 @@ let span_mascota_jugador = document.getElementById("mascota-jugador")
 }
 
 function seleccionar_mascota_enemigo (){
-    let ataque_aleatorio =  aleatorio(1,3)
+    let ataque_mascota_aleatorio =  aleatorio(1,3)
     let span_mascota_enemigo = document.getElementById("mascota-enemigo")
 
-    if (ataque_aleatorio == 1){
+    if (ataque_mascota_aleatorio == 1){
         span_mascota_enemigo.innerHTML = "Hipodogue"
-    }   else if (ataque_aleatorio == 2){
+    }   else if (ataque_mascota_aleatorio == 2){
         span_mascota_enemigo.innerHTML = "Capipepo"
     }   else {
         span_mascota_enemigo.innerHTML = "Ratigueya"
@@ -45,17 +46,29 @@ function seleccionar_mascota_enemigo (){
 
 function ataqueFuego(){
     ataqueJugador = "FUEGO"
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua(){
     ataqueJugador = "AGUA"
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueTierra(){
     ataqueJugador = "TIERRA"
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAleatorioEnemigo (){
+    let ataque_aleatorio = aleatorio(1,3)
+    
+    if (ataque_aleatorio == 1){
+        ataqueEnemigo = "FUEGO" 
+    }   else if (ataque_aleatorio == 2){
+        ataqueEnemigo = "AGUA" 
+    }   else {
+        ataqueEnemigo = "TIERRA" 
+    }
 }
 
 function aleatorio (min,max){
